@@ -1,6 +1,7 @@
 const sendMessage = require("../../sendMessage");
 const messageParts = require("../../messageParts");
-const { commandHandlers } = require("../../commandHandlers");
+const { commandHandlers, callbackHandlers } = require("../../commandHandlers");
+const { answerCallbackQuery } = require("../../keyboardHelpers");
 
 exports.handler = async (event) => {
   console.log("📥 Received an update from Telegram!");
@@ -106,8 +107,40 @@ async function handleMessage(message) {
   }
 }
 
-// Обработка callback queries (пока базовая реализация)
+// Обработка callback queries
 async function handleCallbackQuery(callbackQuery) {
   console.log('🔘 Callback query:', callbackQuery.data);
-  // TODO: Добавить обработку интерактивных элементов позже
+  
+  try {
+    const data = callbackQuery.data;
+    
+    // Отвечаем на callback query
+    await answerCallbackQuery(callbackQuery.id);
+    
+    // Обрабатываем различные типы callback queries
+    if (data.startsWith('expansion_')) {
+      const expansion = data.split('_')[1];
+      await callbackHandlers.expansion(callbackQuery, expansion);
+    } else if (data === 'continue_to_players') {
+      await callbackHandlers.continue_to_players(callbackQuery);
+    } else if (data.startsWith('players_')) {
+      const playersCount = data.split('_')[1];
+      await callbackHandlers.players(callbackQuery, playersCount);
+    } else if (data.startsWith('options_')) {
+      const [, playersCount, optionsCount] = data.split('_');
+      await callbackHandlers.options(callbackQuery, playersCount, optionsCount);
+    } else {
+      console.log('❌ Неизвестный callback query:', data);
+    }
+    
+  } catch (error) {
+    console.error('❌ Ошибка обработки callback query:', error);
+    // Отправляем сообщение об ошибке пользователю
+    try {
+      await sendMessage(callbackQuery.message.chat.id, 
+        "Произошла ошибка при обработке запроса. Попробуйте еще раз.");
+    } catch (sendError) {
+      console.error('❌ Ошибка отправки сообщения об ошибке:', sendError);
+    }
+  }
 }
