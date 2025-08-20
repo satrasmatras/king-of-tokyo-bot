@@ -209,7 +209,7 @@ const callbackHandlers = {
       playerOptions.forEach((character, charIndex) => {
         const expansion = character.expansion ? ` (${character.expansion})` : '';
         const emoji = character.emoji || '🎭';
-        message += `${charIndex + 1}. ${emoji} *${character.name}*${expansion}\n   ${character.description}\n`;
+        message += `${charIndex + 1}. ${emoji} *${character.name}*${expansion}\n`;
       });
       message += `\n`;
     });
