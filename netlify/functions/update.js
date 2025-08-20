@@ -114,6 +114,8 @@ async function handleMessage(message) {
 
 💡 *Начните с команды /random для выбора персонажей!*
 
+🐉👽🦖🦍🐧🥚👻🎃🐼🐕
+
 Используйте /help для получения справки.
     `;
     await sendMessage(chatId, welcomeMessage.trim(), { parse_mode: 'Markdown' });

@@ -102,10 +102,10 @@ const callbackHandlers = {
     
     const selectedExpansionsList = Array.from(currentState.selectedExpansions).map(exp => {
       const names = {
-        core: "Базовая игра",
-        powerUp: "Power Up!",
-        halloween: "Halloween",
-        anubis: "Анубис"
+        core: "🎮 Базовая игра",
+        powerUp: "⚡ Power Up!",
+        halloween: "🎃 Halloween",
+        anubis: "🏺 Анубис"
       };
       return names[exp] || exp;
     }).join(", ");
@@ -191,10 +191,10 @@ const callbackHandlers = {
     // Формируем сообщение с результатами
     const selectedExpansionsList = selectedExpansions.map(exp => {
       const names = {
-        core: "Базовая игра",
-        powerUp: "Power Up!",
-        halloween: "Halloween",
-        anubis: "Анубис"
+        core: "🎮 Базовая игра",
+        powerUp: "⚡ Power Up!",
+        halloween: "🎃 Halloween",
+        anubis: "🏺 Анубис"
       };
       return names[exp] || exp;
     }).join(", ");
@@ -208,7 +208,8 @@ const callbackHandlers = {
       message += `*Игрок ${index + 1}:*\n`;
       playerOptions.forEach((character, charIndex) => {
         const expansion = character.expansion ? ` (${character.expansion})` : '';
-        message += `${charIndex + 1}. ${character.name}${expansion} - ${character.description}\n`;
+        const emoji = character.emoji || '🎭';
+        message += `${charIndex + 1}. ${emoji} *${character.name}*${expansion}\n   ${character.description}\n`;
       });
       message += `\n`;
     });

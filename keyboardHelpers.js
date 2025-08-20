@@ -52,10 +52,10 @@ const editMessageText = async (chatId, messageId, text, replyMarkup = null) => {
 // Создание inline клавиатуры для выбора расширений
 const createExpansionKeyboard = (selectedExpansions) => {
   const expansionNames = {
-    core: "Базовая игра",
-    powerUp: "Power Up!",
-    halloween: "Halloween",
-    anubis: "Анубис"
+    core: "🎮 Базовая игра",
+    powerUp: "⚡ Power Up!",
+    halloween: "🎃 Halloween",
+    anubis: "🏺 Анубис"
   };
 
   const keyboard = {
