@@ -60,4 +60,10 @@ jspm_packages/
 .Trashes
 ehthumbs.db
 Thumbs.db
-.vercel
+
+# Netlify
+.netlify/
+functions-dist/
+
+# Local Netlify folder
+.netlify

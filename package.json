@@ -6,15 +6,20 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "setup-webhook": "node scripts/setup-webhook.js",
+    "netlify-webhook": "node scripts/setup-netlify-webhook.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["telegram", "bot", "nodejs"],
+  "keywords": [
+    "telegram",
+    "bot",
+    "nodejs"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "node-telegram-bot-api": "^0.64.0",
-    "dotenv": "^16.3.1"
+    "axios": "^1.11.0",
+    "dotenv": "^16.3.1",
+    "node-telegram-bot-api": "^0.64.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.2"

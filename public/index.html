@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King of Tokyo Bot</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        .bot-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .commands {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .command {
+            margin: 10px 0;
+            padding: 5px 0;
+        }
+        .command-name {
+            font-weight: bold;
+            color: #ffd700;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            opacity: 0.8;
+        }
+        a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 King of Tokyo Bot</h1>
+        
+        <div class="bot-info">
+            <p>Telegram-бот для выбора случайных персонажей в игре King of Tokyo</p>
+            <p><strong>Найти бота:</strong> <a href="https://t.me/king_of_tokyo_bot" target="_blank">@king_of_tokyo_bot</a></p>
+        </div>
+
+        <div class="commands">
+            <h2>📋 Доступные команды:</h2>
+            
+            <div class="command">
+                <span class="command-name">/start</span> - Приветствие и основная информация
+            </div>
+            
+            <div class="command">
+                <span class="command-name">/help</span> - Показать справку по командам
+            </div>
+            
+            <div class="command">
+                <span class="command-name">/random</span> - Интерактивный выбор персонажей для группы
+            </div>
+            
+            <div class="command">
+                <span class="command-name">/random2</span> - Быстрый выбор персонажей для группы
+            </div>
+            
+            <div class="command">
+                <span class="command-name">/characters</span> - Полный список всех персонажей
+            </div>
+            
+            <div class="command">
+                <span class="command-name">/expansions</span> - Доступные расширения игры
+            </div>
+        </div>
+
+        <div class="commands">
+            <h2>🎮 Особенности:</h2>
+            <ul>
+                <li>🎲 Случайный выбор уникальных персонажей</li>
+                <li>🎯 Поддержка всех расширений King of Tokyo</li>
+                <li>👥 Выбор для 2-6 игроков</li>
+                <li>🔄 1-2 варианта персонажей на игрока</li>
+                <li>📱 Интерактивный интерфейс с кнопками</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>Создано для любителей настольных игр 🎲</p>
+            <p>Версия для Netlify Functions</p>
+        </div>
+    </div>
+</body>
+</html>
